@@ -1,0 +1,162 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #54576b;
+  text-align: center;
+}
+
+/* .wrap{
+  position: relative;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+} */
+
+/* .modal{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 900px;
+  height: 400px;
+  background-color: brown;
+} */
+
+header {
+  background: #54576b;
+  color: #fff;
+  padding: 10px 200px;
+  position: relative;
+}
+
+header .text {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+.js-incorrect-text.text{
+  top: 83%;
+}
+
+.text {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+button {
+  border: 2px solid #54576b;
+  color: #54576b;
+  font-weight: bold;
+  background: none;
+  border-radius: 4px;
+  outline: none;
+  margin: 30px 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+button:disabled {
+  color: #ccc;
+  border-color: #ccc;
+  cursor: auto;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 30px auto;
+  padding: 0 10px;
+  list-style: none;
+  max-width: 1000px;
+}
+
+ul li {
+  display: inline-block;
+  overflow: hidden;
+  margin: 10px 10px 0 10px;
+  cursor: pointer;
+  /* width: calc(20% - 20px); */
+}
+
+ul img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 2px solid #54576b;
+}
+
+ul span {
+  display: block;
+  margin: 5px 0 0;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.js-catItem.done{
+  opacity: 0;
+  transition: opacity 2s ease-in;
+}
+
+.parent-card{
+  position: relative;
+  border-radius: 8px;
+  width: 176px;
+  height: 176px;
+  -webkit-perspective : 1000px;
+  perspective : 1000px;
+  transition: all 1s ease-in;
+  opacity: 0;
+}
+
+.parent-card:hover{
+  transform: translateY(-5%);
+}
+
+.front-card,.back-card{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor : pointer;
+  transition : transform 1s;
+  -webkit-backface-visibility : hidden;
+  backface-visibility : hidden;
+}
+.front-card{
+  border-radius: 8px;
+  background-color: #54576b;
+  color: #fff;
+  line-height: 11;
+  font-weight: bold;
+}
+
+.back-card{
+  
+  transform : rotateY(-180deg);
+}
+
+.parent-card.flipped .front-card{
+  transform : rotateY(-180deg);
+}
+
+.parent-card.flipped .back-card{
+  transform : rotateY(0deg);
+}
+
+/* utility */
+.shadow{
+  box-shadow: 5px 5px 10px rgb(0 0 0);
+}
+
+.visibility{
+  opacity: 1;
+}
